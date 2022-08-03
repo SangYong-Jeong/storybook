@@ -1,0 +1,10 @@
+.pf-input {
+  display: flex;
+  flex-direction: column;
+  & > .pf-input__label {
+    font-size: 16px;
+  }
+  & > .pf-input__input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+$small-font-size: 12px;
+$medium-font-size: $small-font-size + 2px;
+$large-font-size: $medium-font-size + 2px;
+
+$small-padding-vertical: 10px;
+$small-padding-horizon: 16px;
+$medium-padding-vertical: $small-padding-vertical + 1px;
+$medium-padding-horizon: $small-padding-horizon + 4px;
+$large-padding-vertical: $medium-padding-vertical + 1px;
+$large-padding-horizon: $medium-padding-horizon + 4px;
+
+
+.pf-button {
+  &.pf-button-small {
+    font-size: $small-font-size;
+    padding: $small-padding-vertical $small-padding-horizon;
+  }
+  &.pf-button-medium {
+    font-size: $medium-font-size;
+    padding: $medium-padding-vertical $medium-padding-horizon;
+  }
+  &.pf-button-large {
+    font-size: $large-font-size;
+    padding: $large-padding-vertical $large-padding-horizon;
+  }
+}
