@@ -1,13 +1,22 @@
 // 여기서 확인할게 만약 갖고온 story에서 decorators가 적용되는지 check 필요
-// -> 적용 안됨 
+// -> 적용 안됨
 
 import { PortFolioSet } from './PortFolioSet';
-import { FirstPortFolio, SecondPortFolio, ThirdPortFolio, FourthPortFolio, FifthPortFolio, SixthPortFolio } from '../portfolio-item/PortFolioItem.stories';
+import { PortFolioItem } from '../portfolio-item/PortFolioItem';
+import {
+  FirstPortFolio,
+  SecondPortFolio,
+  ThirdPortFolio,
+  FourthPortFolio,
+  FifthPortFolio,
+  SixthPortFolio,
+} from '../portfolio-item/PortFolioItem.stories';
 
 export default {
-  title: 'PortFolioSet',
+  title: 'Portfolio/PortFolioSet',
   component: PortFolioSet,
-}
+  subcomponents: { PortFolioItem },
+};
 
 const Template = (args) => <PortFolioSet {...args} />;
 
@@ -18,7 +27,7 @@ FirstPortFolioSet.args = {
     { ...SecondPortFolio.args },
     { ...ThirdPortFolio.args },
   ],
-}
+};
 
 export const SecondPortFolioSet = Template.bind({});
 SecondPortFolioSet.args = {
@@ -27,4 +36,4 @@ SecondPortFolioSet.args = {
     { ...FifthPortFolio.args },
     { ...SixthPortFolio.args },
   ],
-}
+};

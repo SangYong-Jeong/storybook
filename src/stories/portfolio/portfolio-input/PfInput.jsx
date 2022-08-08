@@ -6,7 +6,7 @@ export const PfInput = ({ label }) => {
   return (
     <div className='pf-input'>
       <label className='pf-input__label'>{label}</label>
-      <input className='pf-input__input' />
+      <input className='pf-input__input' data-testid={label} />
     </div>);
 };
 

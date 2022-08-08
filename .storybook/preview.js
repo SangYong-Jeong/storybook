@@ -1,6 +1,11 @@
 // global args를 적용할 수 있게 해주는 파일
 
 export const parameters = {
+  options: {
+    storySort: {
+      method: 'alphabetical',
+    },
+  },
   backgrounds: {
     values: [
       { name: 'red', value: '#f00' },
