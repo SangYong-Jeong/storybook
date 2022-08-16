@@ -1,3 +1,6 @@
+import PortFolioMDXDocumentation from './PortFolioItem-MDX-Documentation.mdx';
+// MDX 문법에서 뜨이ㅓ쓰기의 경우에는 "-" 붙여서 처리해야 한다.
+
 import { PortFolioItem } from './PortFolioItem';
 import apple from '../../assets/apple.jpg';
 import cat from '../../assets/cat.jpg';
@@ -6,11 +9,13 @@ import boat from '../../assets/boat.jpg';
 import boxing from '../../assets/boxing.jpg';
 import soccer from '../../assets/soccer.jpg';
 
-// 모든 스토리에 똑같은 args를 할당하러면, 아래의 export default 하는 객체 안에 args로 특정 arg를 집어넣으면 된다. -> 대부분의 스토리에서 같은 args를 사용한다면, 컴포넌트 레벨에서 args를 정의하고 일부분만 다르게 해서 overwrite하면 좋다.
 export default {
   title: 'Portfolio/PortFolioItem',
   component: PortFolioItem,
   parameters: {
+    docs: {
+      page: PortFolioMDXDocumentation,
+    },
     backgrounds: {
       values: [
         { name: 'red', value: '#f00' },
