@@ -2,19 +2,52 @@ import React from 'react';
 
 import { Button } from './Button';
 
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary as PriMARY,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+} from '@storybook/addon-docs';
+// import { CustomDocumentationComponent } from '../CustomDocumentationComponent';
+// import CustomMDXDocumentation from './Custom-MDX-Documentation.mdx';
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
+  _argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  get argTypes() {
+    return this._argTypes;
+  },
+  set argTypes(value) {
+    this._argTypes = value;
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <PriMARY />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+        </>
+      ),
+    },
   },
   decorators: [
     (Story) => (
-      <div style={{ margin: '3rem' }}><Story /></div>
-    )
-  ]
+      <div style={{ margin: '3rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -35,7 +68,6 @@ Primary.parameters = {
     ],
   },
 };
-
 
 export const Secondary = Template.bind({});
 Secondary.args = {
